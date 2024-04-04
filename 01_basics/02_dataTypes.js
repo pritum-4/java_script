@@ -19,8 +19,21 @@ console.log(typeof null)//object
 console.log(typeof undeqfined)//undefined
 console.log(typeof -53)//number
 console.log("=========================")
+/*Return type of variables in JavaScript
+1) Primitive Datatypes
+       Number => number
+       String  => string
+       Boolean  => boolean
+       null  => object
+       undefined  =>  undefined
+       Symbol  =>  symbol
+       BigInt  =>  bigint
 
-
+2) Non-primitive Datatypes
+       Arrays  =>  object
+       Function  =>  function
+       Object  =>  object
+*/
 
 
 

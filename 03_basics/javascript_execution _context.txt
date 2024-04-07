@@ -1,0 +1,71 @@
+JAVASCRIPT EXECUTION CONTEXT
+
+any code given to the javascript--->
+by defaults it gives you a global ec(execution context) which is referenced by this(keyword)
+
+
+===========:mostly top two execution context:==========
+GLOBAL EXECUTION CONTEXT
+FUNCTION EXECUTION CONTEXT
+EVAL EXECUTION CONTEXT(Mongoose)
+
+how javascript code is executed?
+there are two phase of execution
+--memory creation phase
+--execution phase
+
+code:=
+let val1=10
+let val2=5
+function addNum(num1,num2){
+    let total = num1+num2
+    return total
+}
+let result = addNum(val1,val2)
+let result2 = addNum(10,2)
+
+step1:global execution <------ this
+
+step2: memory phase <--------- first cycle
+        val1 = undefined     
+        val2 = undefined
+        addNum = defination
+        result1=undefined
+        result2=undefined
+
+step3: execution phase <--------second cycle
+        val1=10
+        val2=5
+        for line 24 addNum()===> |  new variable    +   execution thread |<----new execution context       |
+                                 |  memory phase:       execution phase:                                   |
+                                 |  ==============       ===============                                   |
+                                 |   val1=undefined       num1=10                                          |
+                                 |   val2=undefined       num2=5                                           |
+                                 |   total=undefined      total=15<----returned to global execution context|
+                                                                    ^
+                                                                    |
+                                                                    |
+                                                                    |
+                                                    deleted after the execution of line 24
+        result1=15
+        for line 25 addNum()===> |  new variable    +   execution thread |<----new execution context       |
+                                 |  memory phase:       execution phase:                                   |
+                                 |  ==============       ===============                                   |
+                                 |   val1=undefined       num1=10                                          |
+                                 |   val2=undefined       num2=5                                           |
+                                 |   total=undefined      total=15<----returned to global execution context|
+        result2=15
+
+call stack:==>(LIFO==>LAST IN FIRST OUT) can see this execution of function in google inspect
+
+inspect --> sources --> new snippet --> write some functions --> then by debugging check --->
+ call stck in down left corner
+
+
+
+
+
+
+
+
+

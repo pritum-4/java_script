@@ -1,0 +1,16 @@
+tree for an html 
+window->document->html
+html has two parts head and body
+                ==================
+head->title
+        ->text node
+    ->meta
+        ->attribute
+
+head->body
+        ->div->attribute
+            ->h1
+                ->attribute
+                ->text node
+            ->p
+                ->text node

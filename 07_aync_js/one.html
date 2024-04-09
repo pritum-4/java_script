@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ASYNC JAVASCRIPT</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const prayas = function(){
+        console.log("Prayas")
+    }
+    const changeText = function()
+    {
+        const change = document.querySelector('h1')
+        change.innerHTML="Can you notice this is Async JS!!!"
+        change.style.color="white";
+        change.style.backgroundColor="green"
+    }
+    const changeMe = setTimeout(changeText,3000)
+    setTimeout(prayas,2000)
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeMe)
+        console.log("stop")
+    })
+</script>
+</html>

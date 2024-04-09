@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "week">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wedsday</div>
+        <div class="day">Friday</div>
+    </div>
+    <script>
+        //parent -------> child
+        const parent = document.querySelector('.week')
+        console.log(parent);//whole code of div class week
+        console.log(parent.children);//htmlCollection
+        console.log(parent.children[0].innerHTML);//Monday
+        for(let i =0;i<parent.children.length;i++)
+        {
+            console.log(parent.children[i].innerHTML)
+            //Monday Tueday  Wednesday ......
+        }
+        parent.children[1].style.color="yellow"
+        console.log(parent.firstElementChild);//Monday
+        console.log(parent.lastElementChild);//Friday
+
+        //child -----> parent
+
+        const child = document.querySelector(".day")
+        console.log(child)
+        console.log(child.parentElement);
+
+        //child--->sibling
+
+        console.log(child.nextElementSibling);
+
+        //NODES
+        console.log("NODES:",parent.childNodes);//nodelist-->complex tree structure
+
+        
+
+    </script>
+</body>
+</html>
